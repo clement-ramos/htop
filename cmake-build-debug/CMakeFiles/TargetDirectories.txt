@@ -1,3 +1,0 @@
-/home/clement/Documents/GitHub/htop/cmake-build-debug/CMakeFiles/htop.dir
-/home/clement/Documents/GitHub/htop/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/clement/Documents/GitHub/htop/cmake-build-debug/CMakeFiles/rebuild_cache.dir
