@@ -2,12 +2,30 @@
 #ifndef PROCESS_MANAGER_H
 #define PROCESS_MANAGER_H
 
+#include <ctype.h>
+#include <dirent.h>
 #include <ncurses.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <string.h>
 
-#define MAX_PROCESSES 100  // Adjust this value based on your needs
+typedef struct {
+    long pid;           // Process ID
+    int priority;       // Priority
+    int nice;           // Nice value
+    long size;          // Virtual memory size
+    long total_size;    // Total program size
+    long resident;      // Resident Set Size
+    long shared;        // Shared pages
+    long utime;         // User time
+    long stime;         // Kernel time
+    long long virt;     // Virtual memory size
+    char state;         // State
+    char command[256];  // Command
+} ProcessInfo;
 
-void GetProcessList(int pids[], char names[][256], double cpu_usages[], double mem_usages[], int *processCount, WINDOW *win);
+void display_tables_titles();
+void display_processes(WINDOW *window, int current_scroll_position, int *current_row);
+void kill_process();
 
-// Autres déclarations de fonction...
-
-#endif // PROCESS_MANAGER_H
+#endif
